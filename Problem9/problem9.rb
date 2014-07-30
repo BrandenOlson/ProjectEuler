@@ -2,7 +2,6 @@
 
 def find_product
     for c in (1..1000)
-        puts c
         for b in (1..c)
             for a in (1..b)
                 lhs = a*a + b*b
@@ -17,4 +16,4 @@ def find_product
     return -1
 end
 
-puts find_product
+puts "result = #{find_product}"
