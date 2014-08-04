@@ -7,13 +7,13 @@ Disclaimer: This depot is essentially an miniature portfolio of programming prob
 If you are attempting to solve these problems on your own, you should resist viewing the solutions I am providing.
   
 Problems solved:
-- [x] Problem 1
-- [x] Problem 2
-- [ ] Problem 3
-- [x] Problem 4
-- [ ] Problem 5
-- [x] Problem 6
-- [x] Problem 8
-- [x] Problem 9
-- [x] Problem 10
-- [x] Problem 11
+- [x] Problem 001
+- [x] Problem 002
+- [ ] Problem 003
+- [x] Problem 004
+- [ ] Problem 005
+- [x] Problem 006
+- [x] Problem 008
+- [x] Problem 009
+- [x] Problem 010
+- [x] Problem 011
