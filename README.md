@@ -17,3 +17,4 @@ Problems solved:
 - [x] Problem 009
 - [x] Problem 010
 - [x] Problem 011
+- [ ] Problem 012
