@@ -12,6 +12,7 @@ Problems solved:
 - [ ] Problem 3
 - [x] Problem 4
 - [ ] Problem 5
+- [x] Problem 6
 - [x] Problem 8
 - [x] Problem 9
 - [x] Problem 10
