@@ -11,7 +11,7 @@ Problems solved:
 - [x] Problem 002
 - [ ] Problem 003
 - [x] Problem 004
-- [ ] Problem 005
+- [x] Problem 005
 - [x] Problem 006
 - [x] Problem 008
 - [x] Problem 009
