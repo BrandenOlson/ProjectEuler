@@ -21,13 +21,31 @@ end
 # At this point, the matrix has been populated and stored (in a hash)
 # Next, we exhaust all possible sequences of 4 numbers
 
-def get_max_horizontal_product(matrix)
+def get_max_product(matrix, direction)
     max = 0
     (1..WIDTH).each do |j|
         (1..(HEIGHT-4)).each do |i|
             product = 1
             (0..3).each do |offset|
-                product *= matrix[[i + offset, j]]      
+                i_index = 0;
+                j_index = 0;
+                if "horizontal" == direction
+                   i_index = i + offset
+                   j_index = j
+                elsif "vertical" == direction
+                   i_index = i
+                   j_index = j + offset
+                elsif "left diagonal" == direction
+                   i_index = i + offset
+                   j_index = j + offset
+                elsif "right diagonal" == direction
+                   i_index = i + offset
+                   j_index = j - offset
+                end
+                value = matrix[[i_index, j_index]]
+                if "Fixnum" == value.class.to_s
+                   product *= value   
+                end
             end 
             if product > max
                 max = product
@@ -37,64 +55,12 @@ def get_max_horizontal_product(matrix)
     max
 end
 
-def get_max_vertical_product(matrix)
-    max = 0
-    (1..HEIGHT).each do |i|
-        (1..(WIDTH-4)).each do |j|
-            product = 1
-            (0..3).each do |offset|
-                product *= matrix[[i, j + offset]]
-            end
-            if product > max
-                max = product
-            end
-        end
-    end
-    max
-end
 
-def get_max_left_diagonal_product(matrix)
-    max = 0
-    (1..HEIGHT).each do |i|
-        (1..(WIDTH-4)).each do |j|
-            product = 1
-            (0..3).each do |offset|
-                value = matrix[[i + offset, j + offset]]
-                if( "Fixnum" == value.class.to_s )
-                    product *= value
-                end
-            end
-            if product > max
-                max = product
-            end
-        end
-    end
-    max
-end
-
-def get_max_right_diagonal_product(matrix)
-    max = 0
-    (1..HEIGHT).each do |i|
-        (1..(WIDTH-4)).each do |j|
-            product = 1
-            (0..3).each do |offset|
-                value = matrix[[i + offset, j - offset]]
-                if( "Fixnum" == value.class.to_s )
-                    product *= value 
-                end
-            end
-            if product > max
-                max = product
-            end
-        end
-    end
-    max
-end
-
-max_horizontal = get_max_horizontal_product(number_list)
-max_vertical = get_max_vertical_product(number_list)
-max_left_diagonal = get_max_left_diagonal_product(number_list)
-max_right_diagonal = get_max_right_diagonal_product(number_list)
+max_horizontal = get_max_product(number_list, "horizontal")
+max_vertical = get_max_product(number_list, "vertical")
+max_left_diagonal = get_max_product(number_list, "left diagonal")
+max_right_diagonal = get_max_product(number_list, 
+   "right diagonal")
 
 result = [max_horizontal, max_vertical, max_left_diagonal, 
             max_right_diagonal].max
